@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - ShopHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-main">
+            <div class="logo" onclick="window.location.href='Project.html'">Online Shop</div>
+            
+            <div class="header-icons">
+                <div class="icon-item">
+                    <span>👤</span>
+                    <p>Account</p>
+                </div>
+                <div class="icon-item cart-icon" onclick="window.location.href='cart.html'">
+                    <span>🛒</span>
+                    <p id="cartCount">Cart (0)</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container account-container">
+        <div class="account-wrapper">
+            <div id="accountForm" class="form-section">
+                <h2>My Account</h2>
+                <br>
+                <div id="userInfo" class="user-info" style="display: none;">
+                    <p><strong>Username:</strong> <span id="username"></span></p>
+                    <p><strong>Email:</strong> <span id="email"></span></p>
+                    <button class="btn-logout" onclick="logout()">Logout</button>
+                </div>
+
+                <div id="loginRegisterTabs" class="tabs">
+                    <button class="tab-btn active" onclick="showTab('login')">Login</button>
+                    <button class="tab-btn" onclick="showTab('register')">Register</button>
+                </div>
+
+                <div id="loginTab" class="tab-content active">
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password:</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn-submit">Login</button>
+                    </form>
+                </div>
+
+                <div id="registerTab" class="tab-content">
+                    <form onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" id="regEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password:</label>
+                            <input type="password" id="regPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password:</label>
+                            <input type="password" id="regConfirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn-submit">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

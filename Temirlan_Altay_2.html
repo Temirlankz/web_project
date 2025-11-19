@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS</title>
+    <style>
+        label {
+            display: block;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="url"], input[type="search"], 
+        input[type="month"], input[type="time"], input[type="color"], 
+        input[type="number"], input[type="range"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>FORMS</h1>
+
+    <form>
+        <h2>Assignment 1 </h2>
+        
+        <label for="name1">Full name:</label>
+        <input type="text" id="name1" name="name" size="35" maxlength="35">
+        
+        <label for="email1">Email:</label>
+        <input type="email" id="email1" name="email" size="40" maxlength="40">
+        
+        <label for="address1">Addresses</label>
+        <input type="text" id="address1" name="address1" size="40" maxlength="40">
+        <input type="text" id="address2" name="address2" size="40" maxlength="40">
+        <input type="text" id="address3" name="address3" size="40" maxlength="40">
+        
+        <label for="postcode">Postal Code:</label>
+        <input type="text" id="postcode" name="postcode" size="10" maxlength="10">
+    </form>
+
+    <form>
+        <h2>Assignment 2</h2>
+        <label for="reflection">Reflection:</label>
+        <textarea id="reflection" name="reflection" cols="50" rows="5" maxlength="500" 
+                  placeholder="Comments..."></textarea>
+    </form>
+
+    <form>
+        <h2>Assignment 3</h2>
+        
+        <div class="radio-group">
+            <label>How satisfied are you with our support?</label><br>
+            <label><input type="radio" name="satisfaction" value="Very well"> Very well</label>
+            <label><input type="radio" name="satisfaction" value="Well"> Well</label>
+            <label><input type="radio" name="satisfaction" value="Average" checked> Average</label>
+            <label><input type="radio" name="satisfaction" value="Dislike"> Dislike</label>
+        </div>
+    </form>
+
+    <form>
+        <h2>Assignment 4</h2>
+        
+        <div class="checkbox-group">
+            <label>What features would you do on weekend?</label><br>
+            <label><input type="checkbox" name="features" value="dark_mode"> Chill</label>
+            <label><input type="checkbox" name="features" value="notifications"> Study</label>
+            <label><input type="checkbox" name="features" value="offline"> Hard work</label>
+            <label><input type="checkbox" name="features" value="analytics"> Travel</label>
+            <label><input type="checkbox" name="features" value="integration"> Play</label>
+        </div>
+    </form>
+
+    <form>
+        <h2>Assignment 5</h2>
+        
+        <label for="Travel">Where u doing to travel:</label>
+        <select id="Travel" name="Travel">
+            <option value="" disabled selected>Choose a country</option> 
+            <option value="kazakhstan">Kazakhstan</option>
+            <option value="lithuania">Lithuania</option>
+            <option value="ukraine">Ukraine</option>
+            <option value="estonia">Estonia</option>
+            <option value="poland">Poland</option>
+            <option value="other">Other</option>
+        </select>
+        
+        <label for="country">Select country:</label>
+        <select id="country" name="country[]" size="6" multiple>
+            <option value="kazakhstan">Kazakhstan</option>
+            <option value="lithuania">Lithuania</option>
+            <option value="ukraine">Ukraine</option>
+            <option value="estonia">Estonia</option>
+            <option value="poland">Poland</option>
+            <option value="other">Other</option>
+        </select>
+    </form>
+
+    <form>
+        <h2>Assignment 6</h2>
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+
+        <label for="volume">Number:</label>
+        <input type="range" id="volume" name="volume" min="0" max="100" value="30">
+    </form>
+
+    <div class="buttons">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </div>
+
+    <script>
+        document.getElementById('volume').addEventListener('input', function() {
+            document.getElementById('volume_value').textContent = this.value;
+        });
+    </script>
+</body>
+</html>

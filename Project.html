@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Online Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-main">
+            <div class="logo">Online Shop</div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search products, brands...">
+                <button>🔍</button>
+            </div>
+
+            <div class="header-icons">
+                <div class="icon-item" onclick="window.location.href='account.html'">
+                    <span>👤</span>
+                    <p>Account</p>
+                </div>
+                <div class="icon-item cart-icon" onclick="window.location.href='cart.html'">
+                    <span>🛒</span>
+                    <p id="cartCount">Cart (0)</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar Filter -->
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <div class="filter-box">
+                    <h4>Category</h4>
+                    <select id="categorySelect">
+                        <option value="" id="categoriesGrid">All Categories</option>
+                    </select>
+                </div>
+
+                <div class="filter-box">
+                    <h4>Price Range</h4>
+                    <div class="price-range">
+                        <input type="range" min="0" max="5000" id="priceSlider">
+                        <p>$0 - $<span id="priceValue">2500</span></p>
+                    </div>
+                </div>
+
+                <div class="filter-box">
+                    <h4>Sort By</h4>
+                    <select id="sortSelect">
+                        <option>Featured</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest</option>
+                    </select>
+                </div>
+
+                <button class="btn-reset">Reset Filters</button>
+            </aside>
+
+            <main class="products-section">
+                <div class="products-header">
+                    <h2>Featured Products</h2>
+                    <p id="productCount">Loading...</p>
+                </div>
+                <div class="products-grid" id="productsList"></div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About ShopHub</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Policies</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
