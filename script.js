@@ -9,7 +9,7 @@ async function fetchCategories() {
         allCategories = await response.json();
         populateCategories();
     } catch (error) {
-        console.error('Error fetching categories:', error);
+        console.error('Error', error);
     }
 }
 
@@ -41,7 +41,6 @@ async function fetchProducts() {
         renderProducts(allProducts);
         updateProductCount();
     } catch (error) {
-        console.error('Error fetching products:', error);
         document.getElementById('productsList').innerHTML = '<p>Error loading products</p>';
     }
 }
@@ -53,7 +52,7 @@ function renderProducts(filteredProducts = allProducts) {
     productsList.innerHTML = filteredProducts.map(product => `
         <div class="product">
             <div class="product-image-container">
-                <img src="${product.images[0] || 'https://via.placeholder.com/200x180?text=No+Image'}" alt="${product.title}" class="product-image" onerror="this.src='https://via.placeholder.com/200x180?text=No+Image'">
+                <img src="${product.images[0]}" alt="${product.title}" class="product-image" onerror="this.src='https://via.placeholder.com/200x180?text=No+Image'">
                 <span class="product-badge">${product.category.name}</span>
             </div>
             <div class="product-info">
@@ -88,21 +87,6 @@ function addToCart(productId, productName, productPrice, image) {
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     alert(`✓ ${productName} added to cart!`);
-}
-
-function toggleWishlist(productId, productName, productPrice, image) {
-    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-    const existingItem = wishlist.find(p => p.id === productId);
-    
-    if (existingItem) {
-        wishlist = wishlist.filter(p => p.id !== productId);
-        alert(`Removed from saved!`);
-    } else {
-        wishlist.push({ id: productId, name: productName, price: productPrice, image: image });
-        alert(`✓ Added to saved!`);
-    }
-    
-    localStorage.setItem('wishlist', JSON.stringify(wishlist));
 }
 
 function updateCartCount() {
