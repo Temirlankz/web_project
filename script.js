@@ -17,7 +17,7 @@ function populateCategories() {
     const categorySelect = document.getElementById('categorySelect');
     const categoriesGrid = document.getElementById('categoriesGrid');
     
-    allCategories.slice(0, 10).forEach(category => {
+    allCategories.slice(0, 5).forEach(category => {
         const option = document.createElement('option');
         option.value = category.id;
         option.textContent = category.name;
