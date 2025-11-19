@@ -522,7 +522,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
-    transition: background 0.3s;
 }
 
 .btn-submit:hover {
@@ -670,21 +669,4 @@ body {
     margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-    .container {
-        max-width: 100%;
-    }
-    
-    .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    }
-
-    .content-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .sidebar {
-        display: none;
-    }
-}
 
